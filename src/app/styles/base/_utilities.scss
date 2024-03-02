@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as *;
+
+/*====================
+    Utility Classes
+======================*/
+
+/* General */
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.div-container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+// The names are given based on the light mode
+
+.bg-dark {
+  background-color: $DARK;
+}
+
+.bg-white {
+  background-color: $WHITE;
+}
+
+.bg-light {
+  background-color: $LIGHT;
+}
+
+.dark-mode {
+  .bg-dark {
+    background-color: $WHITE;
+  }
+  .bg-white {
+    background-color: $NAVY_BLUE;
+  }
+  .bg-light {
+    background-color: $DARK_SLATE_BLUE;
+  }
+}

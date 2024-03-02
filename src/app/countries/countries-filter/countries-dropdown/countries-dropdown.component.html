@@ -1,0 +1,11 @@
+<dropdown
+  placeholder="Region"
+  (valueChange)="valueChange($event)"
+  [ngModel]="region"
+  name="region"
+>
+  <dropdown-option value="">None</dropdown-option>
+  <dropdown-option *ngFor="let region of regions" [value]="region">{{
+    region
+  }}</dropdown-option>
+</dropdown>

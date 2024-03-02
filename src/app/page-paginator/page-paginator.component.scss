@@ -1,0 +1,46 @@
+.first-page-image {
+  -webkit-mask: url("/assets/images/FirstPage.svg") no-repeat center;
+  mask: url("/assets/images/FirstPage.svg") no-repeat center;
+}
+.previous-page-image {
+  -webkit-mask: url("/assets/images/PreviousPage.svg") no-repeat center;
+  mask: url("/assets/images/PreviousPage.svg") no-repeat center;
+}
+.next-page-image {
+  -webkit-mask: url("/assets/images/NextPage.svg") no-repeat center;
+  mask: url("/assets/images/NextPage.svg") no-repeat center;
+}
+.last-page-image {
+  -webkit-mask: url("/assets/images/LastPage.svg") no-repeat center;
+  mask: url("/assets/images/LastPage.svg") no-repeat center;
+}
+
+.paginator-btn {
+  background-color: rgba(236, 236, 236, 0);
+  border-radius: 50%;
+  padding: 0.75rem;
+  transition: background-color 300ms;
+  &:hover:not(:disabled) {
+    background-color: rgba(236, 236, 236, 0.6);
+  }
+}
+
+.dark-mode {
+  .paginator-btn:hover:not(:disabled) {
+    background-color: #404b56;
+  }
+}
+
+.paginator-btn {
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+.paginator-image {
+  background-color: black;
+}
+
+.dark-mode .paginator-image {
+  background-color: white;
+}

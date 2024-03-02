@@ -1,0 +1,73 @@
+<div
+  class="w-full flex justify-between gap-12 mt-[90px] flex-wrap"
+  *ngIf="{ value: darkMode$ | async } as darkMode"
+>
+  <div class="sm:hidden">
+    <ngx-skeleton-loader
+      [theme]="{
+        width: '450px',
+        height: '400px',
+        'border-radius': '10px',
+        cursor: 'pointer',
+        backgroundColor: darkMode.value ? '#36414A' : ''
+      }"
+      [animation]="darkMode.value ? 'progress-dark' : 'progress'"
+    />
+  </div>
+  <div class="md:hidden">
+    <ngx-skeleton-loader
+      [theme]="{
+        width: '100%',
+        'min-width': '500px',
+        height: '400px',
+        'border-radius': '10px',
+        cursor: 'pointer',
+        backgroundColor: darkMode.value ? '#36414A' : ''
+      }"
+      [animation]="darkMode.value ? 'progress-dark' : 'progress'"
+    />
+  </div>
+
+  <div class="max-w-[580px] grow flex flex-col">
+    <ngx-skeleton-loader
+      [theme]="{
+        width: '150px',
+        height: '50px',
+        cursor: 'pointer',
+        backgroundColor: darkMode.value ? '#36414A' : ''
+      }"
+      [animation]="darkMode.value ? 'progress-dark' : 'progress'"
+    />
+    <div class="flex justify-between gap-10 sm:flex-col sm:gap-8 w-full">
+      <ngx-skeleton-loader
+        [theme]="{
+          width: '200px',
+          height: '160px',
+          cursor: 'pointer',
+          backgroundColor: darkMode.value ? '#36414A' : ''
+        }"
+        [animation]="darkMode.value ? 'progress-dark' : 'progress'"
+      />
+      <ngx-skeleton-loader
+        [theme]="{
+          width: '200px',
+          height: '160px',
+          cursor: 'pointer',
+          backgroundColor: darkMode.value ? '#36414A' : ''
+        }"
+        [animation]="darkMode.value ? 'progress-dark' : 'progress'"
+      />
+    </div>
+    <div class="mt-[70px] flex gap-4">
+      <ngx-skeleton-loader
+        [theme]="{
+          width: '500px',
+          height: '30px',
+          cursor: 'pointer',
+          backgroundColor: darkMode.value ? '#36414A' : ''
+        }"
+        [animation]="darkMode.value ? 'progress-dark' : 'progress'"
+      />
+    </div>
+  </div>
+</div>

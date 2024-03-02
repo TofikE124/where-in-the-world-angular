@@ -1,0 +1,60 @@
+@use "../abstracts/variables" as *;
+
+$FS-HEADING-1: 2rem;
+$FS-HEADING-2: 1.5rem;
+$FS-HEADING-3: 1.125rem;
+$FS-BODY: 1rem;
+$FS-CAPTION: 0.875rem;
+
+@media (max-width: 700px) {
+  $FS-HEADING-1: 1.375rem;
+  $FS-HEADING-2: 0.875rem;
+  $FS-BODY: 0.75rem;
+  $FS-CAPTION: 0.75rem;
+}
+
+.heading-1 {
+  font-size: $FS-HEADING-1;
+  font-weight: 800;
+}
+
+.heading-2 {
+  font-size: $FS-HEADING-2;
+  font-weight: 800;
+}
+.heading-3 {
+  font-size: $FS-HEADING-3;
+  font-weight: 800;
+}
+.body {
+  font-size: $FS-BODY;
+  font-weight: 600;
+}
+
+.caption {
+  font-size: $FS-CAPTION;
+  font-weight: 300;
+}
+
+.text-white {
+  color: $WHITE;
+}
+
+.text-dark {
+  color: $DARK;
+}
+.text-gray {
+  color: $GRAY;
+}
+
+.dark-mode {
+  .text-white {
+    color: $DARK;
+  }
+  .text-dark {
+    color: $WHITE;
+  }
+  .text-gray {
+    color: $WHITE;
+  }
+}

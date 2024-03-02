@@ -1,0 +1,60 @@
+<div class="bg-white py-2 w-full flex items-center justify-center gap-8">
+  <div class="flex gap-2 items-center">
+    <p class="body text-dark">Items per page:</p>
+    <div class="border-gray-200 border-[1px] rounded-md">
+      <dropdown
+        [ngModel]="pageSize"
+        name="pageSize"
+        [small]="true"
+        (valueChange)="pageSizeChange($event)"
+      >
+        <dropdown-option
+          *ngFor="let pageSize of pageSizeOptions"
+          [value]="pageSize"
+          >{{ pageSize }}</dropdown-option
+        >
+      </dropdown>
+    </div>
+  </div>
+  <p class="text-dark caption">{{ getCurrentStatus() }}</p>
+  <div class="flex items-center gap-4">
+    <button
+      class="paginator-btn grid place-items-center"
+      [disabled]="pageIndex === 0"
+      (click)="firstPage()"
+    >
+      <div
+        class="paginator-image first-page-image w-[20px] h-[20px] border-0"
+      ></div>
+    </button>
+
+    <button
+      class="paginator-btn grid place-items-center"
+      [disabled]="pageIndex === 0"
+      (click)="previousPage()"
+    >
+      <div
+        class="paginator-image previous-page-image w-[20px] h-[20px] border-0"
+      ></div>
+    </button>
+    <button
+      class="paginator-btn grid place-items-center"
+      [disabled]="pageIndex >= getNumberOfPages() - 1"
+      (click)="nextPage()"
+    >
+      <div
+        class="paginator-image next-page-image w-[20px] h-[20px] border-0"
+      ></div>
+    </button>
+
+    <button
+      class="paginator-btn grid place-items-center cursor-pointer"
+      [disabled]="pageIndex >= getNumberOfPages() - 1"
+      (click)="lastPage()"
+    >
+      <div
+        class="paginator-image last-page-image w-[20px] h-[20px] border-0"
+      ></div>
+    </button>
+  </div>
+</div>

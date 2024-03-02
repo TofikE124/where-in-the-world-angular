@@ -1,0 +1,23 @@
+<div class="div-container">
+  <div class="py-24" *ngIf="{ value: darkMode$ | async } as darkMode">
+    <div>
+      <a
+        (click)="goBack()"
+        class="text-dark body flex items-center gap-[10px] cursor-pointer"
+        ><img
+          [src]="
+            darkMode.value
+              ? '/assets/images/BackArrow-Dark.png'
+              : '/assets/images/BackArrow-Light.png'
+          "
+        />Back</a
+      >
+    </div>
+
+    <country-details
+      *ngIf="!countryLoading"
+      [country]="country"
+    ></country-details>
+    <country-details-loading *ngIf="countryLoading"></country-details-loading>
+  </div>
+</div>

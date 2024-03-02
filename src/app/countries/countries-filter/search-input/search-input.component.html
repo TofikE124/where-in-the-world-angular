@@ -1,0 +1,21 @@
+<div
+  class="px-8 rounded-[5px] bg-white flex gap-6 items-center w-[480px]"
+  *ngIf="{ value: darkMode$ | async } as darkMode"
+>
+  <img
+    [src]="
+      darkMode.value
+        ? '/assets/images/search-dark.svg'
+        : '/assets/images/search-light.svg'
+    "
+    class="object-cover"
+  />
+  <input
+    placeholder="Search for a country "
+    class="w-full h-[56px] focus:outline-none bg-transparent text-dark"
+    [ngModel]="search"
+    name="search"
+    #Search
+    (keyup)="searchChange(Search.value)"
+  />
+</div>

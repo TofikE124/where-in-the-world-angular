@@ -1,0 +1,13 @@
+<div
+  class="mt-12 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-6 gap-y-4"
+>
+  <ngx-skeleton-loader
+    *ngFor="let item of loadingItems"
+    [theme]="{
+      'border-radius': '5px',
+      height: '336px',
+      width: '100%',
+      cursor: 'pointer'
+    }"
+  />
+</div>

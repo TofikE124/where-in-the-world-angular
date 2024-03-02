@@ -1,0 +1,68 @@
+<div
+  class="w-full flex justify-between gap-12 mt-[90px] flex-wrap"
+  *ngIf="country"
+>
+  <img
+    [src]="country.flags.svg"
+    [alt]="country.flags.alt"
+    class="md:max-w-[580px] grow rounded-[10px] shadow-[0px_0px_14px_4px_rgba(0, 0, 0, 0.03)]"
+  />
+  <div class="max-w-[580px] grow flex flex-col">
+    <h1 class="heading-1 text-dark mb-6">{{ country.name.common }}</h1>
+    <div class="flex justify-between gap-10 sm:flex-col sm:gap-8 w-full">
+      <div class="flex flex-col gap-2">
+        <p class="body text-dark">
+          Native Name:
+          <span class="font-light">{{ country.getNativeName() }}</span>
+        </p>
+        <p class="body text-dark">
+          Population:
+          <span class="font-light">{{ country.population | number }}</span>
+        </p>
+        <p class="body text-dark">
+          Region: <span class="font-light">{{ country.region }}</span>
+        </p>
+        <p class="body text-dark">
+          Sub Region:
+          <span class="font-light">{{ country.subregion }}</span>
+        </p>
+        <p class="body text-dark">
+          Capital:
+          <span class="font-light">{{ country.getCapital() }}</span>
+        </p>
+      </div>
+      <div class="flex flex-col">
+        <p class="body text-dark">
+          Top Level Domain:
+          <span class="font-light">{{ country.getTld() }}</span>
+        </p>
+        <p class="body text-dark">
+          Currencies:
+          <span class="font-light">{{ country.getCurrencies() }}</span>
+        </p>
+        <p class="body text-dark">
+          Languages:
+          <span class="font-light">{{ country.getLanguages() }}</span>
+        </p>
+      </div>
+    </div>
+    <div class="mt-[70px] flex gap-4 items-center">
+      <p class="text-dark body">Border Countries:</p>
+      <div
+        class="flex gap-[10px] items-center flex-wrap"
+        *ngIf="country.borders.length"
+      >
+        <div
+          *ngFor="let border of country.borders"
+          class="bg-white flex items-center py-1 px-6 rounded-sm cursor-pointer shadow-[0px_0px_4px_1px_rgba(0,0,0,0.10)]"
+          [routerLink]="['/country/', border]"
+        >
+          <p class="text-dark caption">{{ border }}</p>
+        </div>
+      </div>
+      <p class="caption text-dark" *ngIf="!country.borders.length">
+        No Border Countries
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "where-in-the-world-5b166": {
+      "hosting": {
+        "where-in-the-world-angular": [
+          "where-in-the-world-5b166"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "where-in-the-world-5b166"
+  }
+}

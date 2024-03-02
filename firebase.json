@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "where-in-the-world-angular",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "europe-west1"
+      }
+    }
+  ]
+}

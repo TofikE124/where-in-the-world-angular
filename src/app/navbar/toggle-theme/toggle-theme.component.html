@@ -1,0 +1,11 @@
+<div class="flex gap-2 items-center cursor-pointer" (click)="toggleTheme()">
+  <img
+    [src]="
+      darkMode
+        ? '/assets/images/moon-dark.png'
+        : '/assets/images/moon-light.png'
+    "
+    class="object-cover"
+  />
+  <p class="text-dark body">Dark Mode</p>
+</div>
